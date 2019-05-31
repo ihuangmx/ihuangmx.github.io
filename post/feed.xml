@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 心智极客</title>
-    <link>www.huangmingxian.me/post/</link>
+    <link>http://www.huangmingxian.me/post/</link>
     <description>Recent content in Posts on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="www.huangmingxian.me/post/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.huangmingxian.me/post/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Laravel 5.8 快速添加验证码功能</title>
-      <link>www.huangmingxian.me/post/2019-05-31-laravel-captcha-tutorial/</link>
+      <link>http://www.huangmingxian.me/post/2019-05-31-laravel-captcha-tutorial/</link>
       <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>www.huangmingxian.me/post/2019-05-31-laravel-captcha-tutorial/</guid>
+      <guid>http://www.huangmingxian.me/post/2019-05-31-laravel-captcha-tutorial/</guid>
       <description>创建应用 $ laravel new Captcha 配置数据库 DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=captcha DB_USERNAME=root DB_PASSWORD=123456 执行迁移 $ php artisan migrate 使用 Laravel 自带的 auth 组件 $ php artisan make:auth 安装扩展包 $ composer require mews/captcha 发布配置文件 $ php artisan vendor:publish --provider=&#39;Mews\Captcha\CaptchaServiceProvider&#39; 根据自己需要进行配置</description>
     </item>
     
