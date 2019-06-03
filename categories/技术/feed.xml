@@ -6,10 +6,19 @@
     <description>Recent content in 技术 on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.huangmingxian.com/categories/%E6%8A%80%E6%9C%AF/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Hugo 快速搭建个人博客</title>
+      <link>http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/</guid>
+      <description>Hugo,号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 $ brew install hugo $ hugo version // 是否安装成</description>
+    </item>
     
     <item>
       <title>Laravel 5.8 快速添加验证码功能</title>

@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Laravel 5.8 快速添加验证码功能 - 心智极客</title>
+  <title>使用 Hugo 快速搭建个人博客 - 心智极客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="创建应用 $ laravel new Captcha 配置数据库 DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=captcha DB_USERNAME=root DB_PASSWORD=123456 执行迁移 $ php artisan migrate 使用 Laravel 自带的 auth 组件 $ php artisan make:auth 安装扩展包 $ composer require mews/captcha 发布配置文件 $ php artisan vendor:publish --provider=&#39;Mews\Captcha\CaptchaServiceProvider&#39; 根据自己需要进行配置">
+  <meta name="description" content="Hugo,号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 $ brew install hugo $ hugo version // 是否安装成">
   
-  <meta itemprop="name" content="Laravel 5.8 快速添加验证码功能 - 心智极客">
-  <meta itemprop="description" content="创建应用 $ laravel new Captcha 配置数据库 DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=captcha DB_USERNAME=root DB_PASSWORD=123456 执行迁移 $ php artisan migrate 使用 Laravel 自带的 auth 组件 $ php artisan make:auth 安装扩展包 $ composer require mews/captcha 发布配置文件 $ php artisan vendor:publish --provider=&#39;Mews\Captcha\CaptchaServiceProvider&#39; 根据自己需要进行配置">
+  <meta itemprop="name" content="使用 Hugo 快速搭建个人博客 - 心智极客">
+  <meta itemprop="description" content="Hugo,号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 $ brew install hugo $ hugo version // 是否安装成">
   <meta itemprop="image" content="http://www.huangmingxian.com/img/author.jpg">
   
   
@@ -64,119 +64,268 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/" title="Laravel 5.8 快速添加验证码功能" itemprop="url">Laravel 5.8 快速添加验证码功能</a>
+      <a href="http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/" title="使用 Hugo 快速搭建个人博客" itemprop="url">使用 Hugo 快速搭建个人博客</a>
   </h1>
 
   <p class="article-time">
-    <time datetime="2019-05-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019年05月31日</time>
+    <time datetime="2019-06-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019年06月03日</time>
   </p>
 </header>
 
 	<div class="article-content">
     
-    <p>创建应用</p>
+		<div class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#生成博客">生成博客</a></li>
+<li><a href="#目录结构">目录结构</a></li>
+<li><a href="#安装主题">安装主题</a></li>
+<li><a href="#使用主题">使用主题</a></li>
+<li><a href="#创建文章">创建文章</a></li>
+<li><a href="#生成最终网站">生成最终网站</a></li>
+<li><a href="#增加分类">增加分类</a></li>
+<li><a href="#部署到-github">部署到 <code>Github</code></a></li>
+</ul></li>
+</ul>
+</nav>
+		</div>
+    
+    
 
-<pre><code class="language-php">$ laravel new Captcha
+<p><code>Hugo</code>,号称是世界上最快的静态网站生成工具，由 <code>Go</code> 语言开发，除了速度快之外，本身的使用也非常的简单。</p>
+
+<h2 id="安装">安装</h2>
+
+<p>Mac 下的安装</p>
+
+<pre><code class="language-bash">$ brew install hugo
+$ hugo version // 是否安装成功
+$ hugo --help 
 </code></pre>
 
-<p>配置数据库</p>
+<h2 id="生成博客">生成博客</h2>
 
-<pre><code class="language-toml">DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=captcha
-DB_USERNAME=root
-DB_PASSWORD=123456
+<p>创建网站</p>
+
+<pre><code class="language-bash">$ hugo new site ihuangmx.github.io
 </code></pre>
 
-<p>执行迁移</p>
+<h2 id="目录结构">目录结构</h2>
 
-<pre><code class="language-sh">$ php artisan migrate
+<p>由 <code>hugo</code> 生成的博客的基本目录如下</p>
+
+<ul>
+<li><code>archetypes</code> - 预定义看板，在这类，你可以定制你生成的博客的基本模板。</li>
+<li><code>content</code> - 网站的所有内容都保存在这里</li>
+<li><code>data</code> - 保存站点可使用的配置文件</li>
+<li><code>layouts</code> - 自定义的模板</li>
+<li><code>public</code> - 生成的可直接部署的博客</li>
+<li><code>static</code> - 静态文件，比如你站点需要用到的 logo、头像等</li>
+</ul>
+
+<p>目录的话，其实用到的地方不多，一般人只需要按照默认的主题来就行。</p>
+
+<h2 id="安装主题">安装主题</h2>
+
+<p>生成网站之后，首先要做的就是下载 <a href="https://themes.gohugo.io/">主题</a>，通常有两种方法。</p>
+
+<p>第一种是下载所有主题，简单粗暴</p>
+
+<pre><code class="language-bash">$ cd ihuangmx.github.io
+$ git clone --depth 1 --recursive https://github.com/gohugoio/hugoThemes.git themes
 </code></pre>
 
-<p>使用  Laravel 自带的 <code>auth</code> 组件</p>
+<p>第二种是下载感兴趣的主题</p>
 
-<pre><code class="language-sh">$ php artisan make:auth
+<pre><code class="language-bash">$ cd themes
+$ git clone https://github.com/spf13/hyde
+$ git submodule add https://github.com/jacobsun/hugo-theme-cole  // 或者
 </code></pre>
 
-<p>安装扩展包</p>
+<h2 id="使用主题">使用主题</h2>
 
-<pre><code class="language-sh">$ composer require mews/captcha
+<p>我们以国人开发的 <a href="https://themes.gohugo.io/hugo-pacman-theme/">hugo-pacman-theme</a> 为例简单的介绍。</p>
+
+<p>安装主题</p>
+
+<pre><code class="language-bash">$ cd themes
+$ git clone https://github.com/coderzh/hugo-pacman-theme.git --depth=1
 </code></pre>
 
-<p>发布配置文件</p>
+<p>按照需要配置主题页面，我自己的简单配置如下</p>
 
-<pre><code class="language-sh">$ php artisan vendor:publish --provider='Mews\Captcha\CaptchaServiceProvider'
+<pre><code class="language-toml">BaseURL = &quot;http://ihaungmx.github.io/&quot;
+LanguageCode = &quot;zh-CN&quot;
+HasCJKLanguage = true
+Title = &quot;心智极客&quot;
+Theme = &quot;hugo-pacman-theme&quot;
+pygmentsStyle = &quot;default&quot;
+pygmentsUseClasses = true
+
+[Author]
+  Name = &quot;心智极客&quot;
+
+[outputs]
+  home = [ &quot;RSS&quot;, &quot;HTML&quot; ]
+    
+[outputFormats] 
+  [outputFormats.RSS]
+    mediatype = &quot;application/rss&quot;
+    baseName = &quot;feed&quot;
+
+[Params]
+
+  BottomIntroduce = &quot;个人微信&quot;
+  Subtitle = &quot;Never But Better&quot;
+  Imglogo = &quot;img/logo.jpg&quot;
+  AuthorImg = &quot;img/wechat.jpg&quot;
+  DateFormat = &quot;2006年01月02日&quot;
+  MonthFormat = &quot;2006年01月&quot;
+  FancyBox = false
+
+  [Params.Disqus]
+    ShortName = &quot;huangmingxian&quot;
+
+  [Params.Strings]
+    Search = &quot;搜索&quot;
+    PageNotFound = &quot;你访问的页面不存在&quot;
+    ShowSideBar = &quot;显示侧边栏&quot;
+    HideSideBar = &quot;隐藏侧边栏&quot;
+    Categories = &quot;分类&quot;
+    Archive = &quot;归档&quot;
+    Tags = &quot;标签&quot;
+    Rss = &quot;RSS 订阅&quot;
+    TableOfContents = &quot;文章目录&quot;
+
+[Menu]
+  [[Menu.Main]]
+    Name = &quot;首页&quot;
+    URL = &quot;/&quot;
+    Weight = 1
+  [[Menu.Main]]
+    Name = &quot;关于&quot;
+    URL = &quot;/about&quot;
+    Weight = 2
 </code></pre>
 
-<p>根据自己需要进行配置，本文使用默认配置，因此省略该步骤。配置后记得清空配置信息缓存。</p>
+<p>配置里面对应的素材需要放到 <code>static</code> 目录下面</p>
 
-<pre><code class="language-sh">$ php artisan config:cache
+<pre><code>static
+└── img
+    ├── logo.jpg
+    └── wechat.jpg
 </code></pre>
 
-<p><code>captcha</code> 提供了一系列辅助方法</p>
+<p>配置里面有一个「关于」页面，需要手动生成下</p>
 
-<pre><code class="language-php">captcha(); // 图片
-captcha_src(); // URL
-captcha_img(); // HTML
+<pre><code class="language-bash">$ hugo new about.md
 </code></pre>
 
-<p>辅助方法可传入配置项</p>
+<h2 id="创建文章">创建文章</h2>
 
-<pre><code class="language-php">captcha_img('inverse');
-captcha_src('flat');
+<p>首先，我们生成第一篇文章</p>
+
+<pre><code class="language-bash">$ hugo new post/first.md
 </code></pre>
 
-<p>同时，该扩展包默认注册了供用户获取验证码的路由</p>
+<p>生成的文章内容如下</p>
 
-<p><img src="http://qiniu.larahacks.cn/15543463922140.jpg" alt="-w1240" /></p>
-
-<p>本地路由测试</p>
-
-<pre><code>127.0.0.1:8000/captcha  // 默认使用 default 配置
-127.0.0.1:8000/captcha/flat  // 使用 flat 配置
-127.0.0.1:8000/captcha/api // 测试 API 返回
+<pre><code class="language-bash">---
+title: &quot;First&quot;
+date: 2019-06-03T17:10:40+08:00
+draft: true
+---
 </code></pre>
 
-<p>测试成功后，我们来为注册视图添加验证码，可添加到密码后面</p>
+<p>该文章的默认模板是根据 <code>archetypes</code> 目录下的 <code>default.md</code> 来的，可以自己修改模板</p>
 
-<pre><code class="language-html">// /resources/views/auth/register.blade.php
-&lt;div class=&quot;form-group row&quot;&gt;
-    &lt;label for=&quot;captcha&quot; class=&quot;col-md-4 col-form-label text-md-right&quot;&gt;验证码&lt;/label&gt;
-
-    &lt;div class=&quot;col-md-6&quot;&gt;
-       
-        &lt;input id=&quot;captcha&quot; class=&quot;form-control{{ $errors-&gt;has('captcha') ? ' is-invalid' : '' }}&quot; name=&quot;captcha&quot; required&gt;
-       
-        &lt;img class=&quot;thumbnail mt-3 mb-2&quot; src=&quot;{{ captcha_src() }}&quot; onclick=&quot;this.src='/captcha?'+Math.random()&quot; title=&quot;点击图片重新获取验证码&quot;&gt;
-
-    @if ($errors-&gt;has('captcha'))
-      &lt;span class=&quot;invalid-feedback&quot; role=&quot;alert&quot;&gt;
-        &lt;strong&gt;{{ $errors-&gt;first('captcha') }}&lt;/strong&gt;
-      &lt;/span&gt;
-    @endif
-  &lt;/div&gt;
-&lt;/div&gt;
+<pre><code class="language-bash">// default.md
+---
+title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;
+date: {{ now.Format &quot;2006-01-02&quot;  }} 
+draft: false
+categories: [] 
+tags: []
+toc: false
+---
 </code></pre>
 
-<p>该步骤中，我们在 URL 后面附带了随机数，防止浏览器缓存。</p>
+<p>再次生成博客文章</p>
 
-<p><img src="http://qiniu.larahacks.cn/15553341862464.jpg" alt="-w740" /></p>
-
-<p>最后，只需要在注册控制器中添加验证即可</p>
-
-<pre><code class="language-php">// /app/Http/Controllers/Auth/RegisterController.php
-
-protected function validator(array $data)
-{
-    return Validator::make($data, [
-        'name' =&gt; ['required', 'string', 'max:255'],
-        'email' =&gt; ['required', 'string', 'email', 'max:255', 'unique:users'],
-        'password' =&gt; ['required', 'string', 'min:8', 'confirmed'],
-        'captcha' =&gt; ['required', 'captcha'],
-    ]);
-}
+<pre><code class="language-bash">$ hugo new post/second.md
 </code></pre>
+
+<p>生成的文章内容变成了</p>
+
+<pre><code class="language-bash">---
+title: &quot;Second&quot;
+date: 2019-06-03 
+draft: false
+categories: [] 
+tags: []
+toc: false
+---
+</code></pre>
+
+<h2 id="生成最终网站">生成最终网站</h2>
+
+<p>生成静态博客并在本地查看</p>
+
+<pre><code class="language-bash">$ hugo server
+</code></pre>
+
+<p>默认的话，只会显示 <code>draft</code> 为 <code>false</code> 的文章</p>
+
+<p><img src="media/15592680454337/15595534688988.jpg" alt="-w1267" /></p>
+
+<p>服务器是实时更新的，只要你的内容发生了变化，本地服务器会实时更新变化后的内容，也可以设置成不实时更新</p>
+
+<pre><code class="language-bash">$ hugo server --watch=false
+</code></pre>
+
+<p><code>hugo server</code> 并不会生成真正的站点，一般在部署之前，需要运行 <code>hugo</code> 命令生成 <code>public</code> 站点</p>
+
+<pre><code class="language-bash">$ hugo
+</code></pre>
+
+<h2 id="增加分类">增加分类</h2>
+
+<p>增加分类的方法非常简单，只需要修改配置文件</p>
+
+<pre><code class="language-toml">[Menu]
+   [[Menu.Main]]
+    Name = &quot;随笔&quot;
+    URL = &quot;/categories/随笔&quot;
+    Weight = 1
+   [[Menu.Main]]
+    Name = &quot;技术&quot;
+    URL = &quot;/categories/技术&quot;
+    Weight = 2
+   [[Menu.Main]]
+    Name = &quot;关于&quot;
+    URL = &quot;/about&quot;
+    Weight = 3
+</code></pre>
+
+<p>文章增加对应的分类即可</p>
+
+<pre><code class="language-bash">---
+title: &quot;Second&quot;
+date: 2019-06-03 
+draft: false
+categories: [&quot;随笔&quot;] 
+tags: []
+toc: false
+---
+</code></pre>
+
+<h2 id="部署到-github">部署到 <code>Github</code></h2>
+
+<p>只需要将 <code>public</code> 部署到 github 即可。</p>
 
     
 	</div>
@@ -186,7 +335,7 @@ protected function validator(array $data)
 <div class="article-tags">
   <span></span>
   
-  <a href="http://www.huangmingxian.com/tags/laravel">Laravel</a>
+  <a href="http://www.huangmingxian.com/tags/%E8%BD%AF%E4%BB%B6">软件</a>
   
 </div>
 
@@ -204,7 +353,7 @@ protected function validator(array $data)
 
 
   <div class="article-share" id="share">
-    <div data-url="http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/" data-title="Laravel 5.8 快速添加验证码功能" data-tsina="" class="share clearfix">
+    <div data-url="http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/" data-title="使用 Hugo 快速搭建个人博客" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -226,8 +375,8 @@ protected function validator(array $data)
 
 
 var disqus_config = function () {
-this.page.url = "http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/";
-this.page.identifier = "http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/";
+this.page.url = "http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/";
+this.page.identifier = "http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/";
 };
 (function() { 
 var d = document, s = d.createElement('script');
