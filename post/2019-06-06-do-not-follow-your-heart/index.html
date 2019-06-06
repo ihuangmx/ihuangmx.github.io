@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Laravel 5.8 快速添加验证码功能 - 心智极客</title>
+  <title>不要追随你的激情 - 心智极客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="创建应用 $ laravel new Captcha 配置数据库 DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=captcha DB_USERNAME=root DB_PASSWORD=123456 执行迁移 $ php artisan migrate 使用 Laravel 自带的 auth 组件 $ php artisan make:auth 安装扩展包 $ composer require mews/captcha 发布配置文件 $ php artisan vendor:publish --provider=&#39;Mews\Captcha\CaptchaServiceProvider&#39; 根据自己需要进行配置">
+  <meta name="description" content="乔布斯的演讲可能大多数人都听过，其中有一段如下 你们的时间有限，所以不要浪费时间活在别人的生活里。不要被信条所惑－盲从信条就是活在别人思考结果">
   
-  <meta itemprop="name" content="Laravel 5.8 快速添加验证码功能 - 心智极客">
-  <meta itemprop="description" content="创建应用 $ laravel new Captcha 配置数据库 DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=captcha DB_USERNAME=root DB_PASSWORD=123456 执行迁移 $ php artisan migrate 使用 Laravel 自带的 auth 组件 $ php artisan make:auth 安装扩展包 $ composer require mews/captcha 发布配置文件 $ php artisan vendor:publish --provider=&#39;Mews\Captcha\CaptchaServiceProvider&#39; 根据自己需要进行配置">
+  <meta itemprop="name" content="不要追随你的激情 - 心智极客">
+  <meta itemprop="description" content="乔布斯的演讲可能大多数人都听过，其中有一段如下 你们的时间有限，所以不要浪费时间活在别人的生活里。不要被信条所惑－盲从信条就是活在别人思考结果">
   <meta itemprop="image" content="http://www.huangmingxian.com/img/author.jpg">
   
   
@@ -64,119 +64,70 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/" title="Laravel 5.8 快速添加验证码功能" itemprop="url">Laravel 5.8 快速添加验证码功能</a>
+      <a href="http://www.huangmingxian.com/post/2019-06-06-do-not-follow-your-heart/" title="不要追随你的激情" itemprop="url">不要追随你的激情</a>
   </h1>
 
   <p class="article-time">
-    <time datetime="2019-05-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019年05月31日</time>
+    <time datetime="2019-06-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019年06月06日</time>
   </p>
 </header>
 
 	<div class="article-content">
     
-    <p>创建应用</p>
+		<div class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+      
+		</div>
+    
+    <p>乔布斯的演讲可能大多数人都听过，其中有一段如下</p>
 
-<pre><code class="language-php">$ laravel new Captcha
-</code></pre>
+<blockquote>
+<p>你们的时间有限，所以不要浪费时间活在别人的生活里。不要被信条所惑－盲从信条就是活在别人思考结果里。不要让别人的意见淹没了你内在的心声。最重要的，拥有跟随内心与直觉的勇气，你的内心与直觉多少已经知道你真正想要成为什么样的人。任何其它事物都是次要的。</p>
+</blockquote>
 
-<p>配置数据库</p>
+<p>遵从你的内心，属于「激情假设」，该假设认为，要获得职业幸福，关键是首先搞清楚自己的激情所在，然后找到一份与这种激情相匹配的职业。那么，遵从你的内心，或者说激情假设，是不是一个好的建议呢？孔子说过，不仅要听其言，还要观其行。因此，我们需要进一步了解乔布斯的经历。</p>
 
-<pre><code class="language-toml">DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=captcha
-DB_USERNAME=root
-DB_PASSWORD=123456
-</code></pre>
+<p>乔布斯曾就读于里德学院，这是俄勒冈久负盛名的文科飞地。上学期间，他留起了长发，并且养成了光脚走路的习惯。与同时代的其他科技先知不同，<strong>学生时代的乔布斯对商业和电子都不怎么感兴趣，而是喜欢研究西方历史和舞蹈，还对东方神秘主义有所涉猎</strong>。</p>
 
-<p>执行迁移</p>
+<p>入学一年后，乔布斯辍学了，但仍在校园里待了一阵子：睡在地板上，去当地的克利须那神庙蹭饭吃。他的特立独行使其成为一个校园名人，用现在的话来说，就是一朵奇葩。杰弗里·扬 在 1988 年出版了一本调查详尽的传记《史蒂夫·乔布斯：过程即是奖励》。他在书中写道，乔布斯最终厌倦了靠救济生活，并于 20 世纪 70 年代初回到加利福尼亚的父母家中，给自己在雅达利找了一份夜班工作。这家公司之所以引起他的注意，是因为他们登在《圣何塞信使报》上的广告写着「好玩又赚钱」。在此期间，乔布斯把时间都花在了雅达利以及大同农场，后者是一家位于旧金山北部的乡村公社。他曾几个月没去雅达利上班，而是去印度进行一场托钵僧式的精神之旅。一回到家，他便去了附近的洛斯拉图斯禅修中心，开始认真修行。</p>
 
-<pre><code class="language-sh">$ php artisan migrate
-</code></pre>
+<p>1974 年，在乔布斯从印度返回之后，当地一名叫亚历克斯·卡姆拉特的工程师开了一家叫接入电脑的计算机分时服务公司。卡姆拉特找来史蒂夫·沃兹尼亚克，想设计一个终端设备，用来让客户接入他的中央计算机。与乔布斯不同，沃兹尼亚克是个真正的电子高手，他痴迷于科技，而且在大学里系统地学过相关知识。不过，另一方面，沃兹尼亚克对商业一窍不通。于是，他让老朋友乔布斯来处理相关的细节安排。一切进展得很顺利，直到 1975 年秋天。那个时候，乔布斯离开了一段时间，因为他要去大同农场。可惜他没告诉卡姆拉特这件事。等回来时，他的位置换成了别人。</p>
 
-<p>使用  Laravel 自带的 <code>auth</code> 组件</p>
+<p>讲这个故事的原因是，<strong>这些行为并不常在热衷于科技和创业的人身上出现，然而此时距离乔布斯创立苹果公司不到一年</strong>。换句话说，在创立他那梦幻公司之前，乔布斯是个有点矛盾的年轻人：<strong>他追求心灵上的启迪</strong>，而接触电子行业不过是为了赚点快钱。</p>
 
-<pre><code class="language-sh">$ php artisan make:auth
-</code></pre>
+<p>就在这一年的晚些时候，带着这种心态的乔布斯偶然迎来了他的人生转机。他注意到，当地的计算机迷兴奋于套装电脑的出现，这些发烧友们可以在家里组装电脑了。对于这种令人兴奋的事物，不止他一个人注意到其发展潜力。一个雄心勃勃的年轻哈佛大学学生看到杂志《大众电子》的封面上出现了第一台套装电脑。后来，他成立了一家公司来给新机器开发一套 BASIC 编程语言，并最终辍学去经营事业。他给他的新公司起名叫微软。</p>
 
-<p>安装扩展包</p>
+<p>乔布斯竭力让沃兹尼亚克接受了自己的想法：设计这种套装电脑的电路板，然后卖给当地的爱好者。他们最初打算每块板子花 25 美元的成本制作，然后以 50 美元卖掉。乔布斯总共想卖 100 块电路板。这样一来，除去板子的印制成本以及最初的 1500 美元设计费，他们还能小赚 1000 美元。不管是沃兹尼亚克还是乔布斯，他们都没有丢下正常工作，这完全是他们在业余时间搞的一个低风险项目。</p>
 
-<pre><code class="language-sh">$ composer require mews/captcha
-</code></pre>
+<p>但是，从这一刻起，故事便迅速向传奇方向发展。乔布斯光脚来到了字节商店。这是保罗·特雷尔在山景城开的一家具有先锋意义的电脑店。乔布斯向特雷尔推销电路板。特雷尔不想要纯电路板，但他说会买组装好的电脑。每台电脑出 500 美元，而且要 50 台，尽快发货。乔布斯迫不及待地抓住这个赚大钱的机会，开始四处借钱、筹集启动资金。正是这个不期而遇的「苹果」砸中了乔布斯的脑袋——苹果公司诞生了。正如扬所强调的：他们的计划很谨慎，都是些小打小闹。他们并不梦想着征服整个世界。</p>
 
-<p>发布配置文件</p>
+<p>如果年轻时的乔布斯接受了他自己的建议，并且决心只做自己热爱的工作，那么我们今天可能就会看到洛斯阿图斯禅修中心多了一位广受欢迎的老师；但他并没有听从这个简单的建议。毫无疑问，<strong>苹果公司的诞生并不是出于激情，而是出于一个幸运的转机，是小打小闹结出的意外的硕果</strong>。</p>
 
-<pre><code class="language-sh">$ php artisan vendor:publish --provider='Mews\Captcha\CaptchaServiceProvider'
-</code></pre>
+<p>激情假设意味着要寻找自己的激情所在，这是非常危险的。年轻人在尚未开始之前，就视图寻求一个未知的答案，并且深陷其中不能自拔。激情假设让人们相信某种有魔力的「正确职业」正等着他们，而且一旦找到了，他们就会立即认出来：那就是他们注定要做的工作。当然了，问题是，当他们没找到时，糟糕的事情就会随之而来，比如不断跳槽以及后果严重的自我怀疑。</p>
 
-<p>根据自己需要进行配置，本文使用默认配置，因此省略该步骤。配置后记得清空配置信息缓存。</p>
+<p>以下是三点职业激情的相关研究结论：</p>
 
-<pre><code class="language-sh">$ php artisan config:cache
-</code></pre>
+<ul>
+<li><p>激情是稀缺的。在确认出来的所有激情中，只有不到 <code>4%</code> 与工作或教育有关，其他 <code>96%</code> 都是某种爱好或兴趣，比如运动和艺术。这就意味着我们事先想要寻找的激情很有可能是不存在的。</p></li>
 
-<p><code>captcha</code> 提供了一系列辅助方法</p>
+<li><p>最快乐、最有激情的员工不是那些将激情化为工作的人，而是那些做得足够久从而擅长于自己所做事情的人。经验更多的助理会更喜欢他们的工作。如果有了多年的经验，你就会在自己的事情上更加出色，而且会产生效能感。你还会有时间发展牢固的同事关系，会看到自己的工作给他人带来的巨大好处。且不论这种解释有多合理，重要的是，它与激情假设相矛盾：激情假设所强调的是当下的幸福感，而且这种幸福感来自于将自己的职业与某种真正的激情相匹配。</p></li>
 
-<pre><code class="language-php">captcha(); // 图片
-captcha_src(); // URL
-captcha_img(); // HTML
-</code></pre>
+<li><p>激情是精通的副产品。决定个人动机的三要素是自主、胜任、归属。在大部分职业中，如果在自己的事情上做到更好，那么你不仅会因表现出色而产生成就感，而且，作为奖励，通常还能更多地掌控自己的职责。这点也可以用于解释工作年限越长的人为什么会越有激情。</p></li>
+</ul>
 
-<p>辅助方法可传入配置项</p>
+<p>这三点可以总结成一句话</p>
 
-<pre><code class="language-php">captcha_img('inverse');
-captcha_src('flat');
-</code></pre>
+<blockquote>
+<p>正确地工作胜过找到正确的工作。</p>
+</blockquote>
 
-<p>同时，该扩展包默认注册了供用户获取验证码的路由</p>
+<hr />
 
-<p><img src="http://qiniu.larahacks.cn/15543463922140.jpg" alt="-w1240" /></p>
+<p>参考资料</p>
 
-<p>本地路由测试</p>
-
-<pre><code>127.0.0.1:8000/captcha  // 默认使用 default 配置
-127.0.0.1:8000/captcha/flat  // 使用 flat 配置
-127.0.0.1:8000/captcha/api // 测试 API 返回
-</code></pre>
-
-<p>测试成功后，我们来为注册视图添加验证码，可添加到密码后面</p>
-
-<pre><code class="language-html">// /resources/views/auth/register.blade.php
-&lt;div class=&quot;form-group row&quot;&gt;
-    &lt;label for=&quot;captcha&quot; class=&quot;col-md-4 col-form-label text-md-right&quot;&gt;验证码&lt;/label&gt;
-
-    &lt;div class=&quot;col-md-6&quot;&gt;
-       
-        &lt;input id=&quot;captcha&quot; class=&quot;form-control{{ $errors-&gt;has('captcha') ? ' is-invalid' : '' }}&quot; name=&quot;captcha&quot; required&gt;
-       
-        &lt;img class=&quot;thumbnail mt-3 mb-2&quot; src=&quot;{{ captcha_src() }}&quot; onclick=&quot;this.src='/captcha?'+Math.random()&quot; title=&quot;点击图片重新获取验证码&quot;&gt;
-
-    @if ($errors-&gt;has('captcha'))
-      &lt;span class=&quot;invalid-feedback&quot; role=&quot;alert&quot;&gt;
-        &lt;strong&gt;{{ $errors-&gt;first('captcha') }}&lt;/strong&gt;
-      &lt;/span&gt;
-    @endif
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>该步骤中，我们在 URL 后面附带了随机数，防止浏览器缓存。</p>
-
-<p><img src="http://qiniu.larahacks.cn/15553341862464.jpg" alt="-w740" /></p>
-
-<p>最后，只需要在注册控制器中添加验证即可</p>
-
-<pre><code class="language-php">// /app/Http/Controllers/Auth/RegisterController.php
-
-protected function validator(array $data)
-{
-    return Validator::make($data, [
-        'name' =&gt; ['required', 'string', 'max:255'],
-        'email' =&gt; ['required', 'string', 'email', 'max:255', 'unique:users'],
-        'password' =&gt; ['required', 'string', 'min:8', 'confirmed'],
-        'captcha' =&gt; ['required', 'captcha'],
-    ]);
-}
-</code></pre>
+<ul>
+<li><a href="https://book.douban.com/subject/26781120/">优秀到不能被忽视</a></li>
+</ul>
 
     
 	</div>
@@ -186,7 +137,7 @@ protected function validator(array $data)
 <div class="article-tags">
   <span></span>
   
-  <a href="http://www.huangmingxian.com/tags/laravel">Laravel</a>
+  <a href="http://www.huangmingxian.com/tags/%E6%BF%80%E6%83%85">激情</a>
   
 </div>
 
@@ -197,14 +148,14 @@ protected function validator(array $data)
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="http://www.huangmingxian.com/categories/%E6%8A%80%E6%9C%AF">技术</a>
+  <a class="article-category-link" href="http://www.huangmingxian.com/categories/%E9%9A%8F%E7%AC%94">随笔</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/" data-title="Laravel 5.8 快速添加验证码功能" data-tsina="" class="share clearfix">
+    <div data-url="http://www.huangmingxian.com/post/2019-06-06-do-not-follow-your-heart/" data-title="不要追随你的激情" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -226,8 +177,8 @@ protected function validator(array $data)
 
 
 var disqus_config = function () {
-this.page.url = "http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/";
-this.page.identifier = "http://www.huangmingxian.com/post/2019-05-31-laravel-captcha-tutorial/";
+this.page.url = "http://www.huangmingxian.com/post/2019-06-06-do-not-follow-your-heart/";
+this.page.identifier = "http://www.huangmingxian.com/post/2019-06-06-do-not-follow-your-heart/";
 };
 (function() { 
 var d = document, s = d.createElement('script');

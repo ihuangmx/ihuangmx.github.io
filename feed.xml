@@ -6,10 +6,19 @@
     <description>Recent content on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.huangmingxian.com/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>不要追随你的激情</title>
+      <link>http://www.huangmingxian.com/post/2019-06-06-do-not-follow-your-heart/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.huangmingxian.com/post/2019-06-06-do-not-follow-your-heart/</guid>
+      <description>乔布斯的演讲可能大多数人都听过，其中有一段如下 你们的时间有限，所以不要浪费时间活在别人的生活里。不要被信条所惑－盲从信条就是活在别人思考结果</description>
+    </item>
     
     <item>
       <title>使用 Hugo 快速搭建个人博客</title>
