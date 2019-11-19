@@ -46,11 +46,22 @@
     </item>
     
     <item>
-      <title>About</title>
+      <title>关于</title>
       <link>http://www.huangmingxian.com/about/</link>
       <pubDate>Tue, 19 Nov 2019 10:58:18 +0800</pubDate>
       
       <guid>http://www.huangmingxian.com/about/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Teches</title>
+      <link>http://www.huangmingxian.com/tech/</link>
+      <pubDate>Mon, 03 Jun 2019 13:02:56 +0800</pubDate>
+      
+      <guid>http://www.huangmingxian.com/tech/</guid>
       
         <description></description>
       

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>使用 Hugo 快速搭建个人博客 - 心智极客</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="心智极客" />
+  <meta name="description" content="Hugo 号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 $ brew install hugo $ hugo version // 是否安装成功 $ hugo --help" />
+
+  <meta name="keywords" content="laravel, 个人管理, php, web" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+<link rel="canonical" href="http://www.huangmingxian.com/tech/2019-06-03-use-hugo-to-make-static-blog/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="使用 Hugo 快速搭建个人博客" />
+<meta property="og:description" content="Hugo 号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 $ brew install hugo $ hugo version // 是否安装成功 $ hugo --help" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.huangmingxian.com/tech/2019-06-03-use-hugo-to-make-static-blog/" />
+<meta property="article:published_time" content="2019-06-03T13:02:56+08:00" />
+<meta property="article:modified_time" content="2019-06-03T13:02:56+08:00" />
+<meta itemprop="name" content="使用 Hugo 快速搭建个人博客">
+<meta itemprop="description" content="Hugo 号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 $ brew install hugo $ hugo version // 是否安装成功 $ hugo --help">
+
+
+<meta itemprop="datePublished" content="2019-06-03T13:02:56&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-03T13:02:56&#43;08:00" />
+<meta itemprop="wordCount" content="1216">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 Hugo 快速搭建个人博客"/>
+<meta name="twitter:description" content="Hugo 号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 $ brew install hugo $ hugo version // 是否安装成功 $ hugo --help"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">心智极客的网志</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/tech/">技术</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/post/">随笔</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      心智极客的网志
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/tech/">技术</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/post/">随笔</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+  
+  <header class="post-header">
+    <h1 class="post-title">使用 Hugo 快速搭建个人博客</h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-06-03" class="post-time">
+        2019-06-03
+      </time>
+    </div>
+  </header>
+
+  
+  
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#生成博客">生成博客</a></li>
+<li><a href="#目录结构">目录结构</a></li>
+<li><a href="#安装主题">安装主题</a></li>
+<li><a href="#使用主题">使用主题</a></li>
+<li><a href="#创建文章">创建文章</a></li>
+<li><a href="#生成最终网站">生成最终网站</a></li>
+<li><a href="#增加分类">增加分类</a></li>
+<li><a href="#部署到-github">部署到 <code>Github</code></a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+  
+  <div class="post-content">
+      
+
+<p><code>Hugo</code> 号称是世界上最快的静态网站生成工具，由 <code>Go</code> 语言开发，除了速度快之外，本身的使用也非常的简单。</p>
+
+<h2 id="安装">安装</h2>
+
+<p>Mac 下的安装</p>
+
+<pre><code class="language-bash">$ brew install hugo
+$ hugo version // 是否安装成功
+$ hugo --help 
+</code></pre>
+
+<h2 id="生成博客">生成博客</h2>
+
+<p>创建网站</p>
+
+<pre><code class="language-bash">$ hugo new site ihuangmx.github.io
+</code></pre>
+
+<h2 id="目录结构">目录结构</h2>
+
+<p>由 <code>hugo</code> 生成的博客的基本目录如下</p>
+
+<ul>
+<li><code>archetypes</code> - 预定义看板，在这类，你可以定制你生成的博客的基本模板。</li>
+<li><code>content</code> - 网站的所有内容都保存在这里</li>
+<li><code>data</code> - 保存站点可使用的配置文件</li>
+<li><code>layouts</code> - 自定义的模板</li>
+<li><code>public</code> - 生成的可直接部署的博客</li>
+<li><code>static</code> - 静态文件，比如你站点需要用到的 logo、头像等</li>
+</ul>
+
+<h2 id="安装主题">安装主题</h2>
+
+<p>生成网站之后，首先要做的就是下载 <a href="https://themes.gohugo.io/">主题</a>，通常有两种方法。</p>
+
+<p>第一种是下载所有主题，简单粗暴</p>
+
+<pre><code class="language-bash">$ cd ihuangmx.github.io
+$ git clone --depth 1 --recursive https://github.com/gohugoio/hugoThemes.git themes
+</code></pre>
+
+<p>第二种是下载感兴趣的主题</p>
+
+<pre><code class="language-bash">$ cd themes
+$ git clone https://github.com/spf13/hyde
+$ git submodule add https://github.com/jacobsun/hugo-theme-cole  // 或者
+</code></pre>
+
+<h2 id="使用主题">使用主题</h2>
+
+<p>我们以 <a href="https://themes.gohugo.io/hugo-pacman-theme/">hugo-pacman-theme</a> 为例简单的介绍。</p>
+
+<p>安装主题</p>
+
+<pre><code class="language-bash">$ cd themes
+$ git clone https://github.com/coderzh/hugo-pacman-theme.git --depth=1
+</code></pre>
+
+<p>按照需要配置主题页面，我自己的简单配置如下</p>
+
+<pre><code class="language-toml">BaseURL = &quot;http://ihaungmx.github.io/&quot;
+LanguageCode = &quot;zh-CN&quot;
+HasCJKLanguage = true
+Title = &quot;心智极客&quot;
+Theme = &quot;hugo-pacman-theme&quot;
+pygmentsStyle = &quot;default&quot;
+pygmentsUseClasses = true
+
+[Author]
+  Name = &quot;心智极客&quot;
+
+[outputs]
+  home = [ &quot;RSS&quot;, &quot;HTML&quot; ]
+    
+[outputFormats] 
+  [outputFormats.RSS]
+    mediatype = &quot;application/rss&quot;
+    baseName = &quot;feed&quot;
+
+[Params]
+
+  BottomIntroduce = &quot;个人微信&quot;
+  Subtitle = &quot;Never But Better&quot;
+  Imglogo = &quot;img/logo.jpg&quot;
+  AuthorImg = &quot;img/wechat.jpg&quot;
+  DateFormat = &quot;2006年01月02日&quot;
+  MonthFormat = &quot;2006年01月&quot;
+  FancyBox = false
+
+  [Params.Disqus]
+    ShortName = &quot;huangmingxian&quot;
+
+  [Params.Strings]
+    Search = &quot;搜索&quot;
+    PageNotFound = &quot;你访问的页面不存在&quot;
+    ShowSideBar = &quot;显示侧边栏&quot;
+    HideSideBar = &quot;隐藏侧边栏&quot;
+    Categories = &quot;分类&quot;
+    Archive = &quot;归档&quot;
+    Tags = &quot;标签&quot;
+    Rss = &quot;RSS 订阅&quot;
+    TableOfContents = &quot;文章目录&quot;
+
+[Menu]
+  [[Menu.Main]]
+    Name = &quot;首页&quot;
+    URL = &quot;/&quot;
+    Weight = 1
+  [[Menu.Main]]
+    Name = &quot;关于&quot;
+    URL = &quot;/about&quot;
+    Weight = 2
+</code></pre>
+
+<p>配置里面对应的素材需要放到 <code>static</code> 目录下面</p>
+
+<pre><code>static
+└── img
+    ├── logo.jpg
+    └── wechat.jpg
+</code></pre>
+
+<p>配置里面有一个「关于」页面，需要手动生成下</p>
+
+<pre><code class="language-bash">$ hugo new about.md
+</code></pre>
+
+<h2 id="创建文章">创建文章</h2>
+
+<p>首先，我们生成第一篇文章</p>
+
+<pre><code class="language-bash">$ hugo new post/first.md
+</code></pre>
+
+<p>生成的文章内容如下</p>
+
+<pre><code class="language-bash">---
+title: &quot;First&quot;
+date: 2019-06-03T17:10:40+08:00
+draft: true
+---
+</code></pre>
+
+<p>该文章的默认模板是根据 <code>archetypes</code> 目录下的 <code>default.md</code> 来的，可以自己修改模板，比如，修改文章的时间格式</p>
+
+<pre><code class="language-bash">---
+title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;
+date: {{ now.Format &quot;2006-01-02&quot;  }} 
+draft: false
+categories: [] 
+tags: []
+toc: false
+---
+</code></pre>
+
+<p>再次生成博客文章</p>
+
+<pre><code class="language-bash">$ hugo new post/second.md
+</code></pre>
+
+<p>生成的文章内容变成了</p>
+
+<pre><code class="language-bash">---
+title: &quot;Second&quot;
+date: 2019-06-03 
+draft: false
+categories: [] 
+tags: []
+toc: false
+---
+</code></pre>
+
+<h2 id="生成最终网站">生成最终网站</h2>
+
+<p>生成静态博客并在本地查看</p>
+
+<pre><code class="language-bash">$ hugo server
+</code></pre>
+
+<p>默认的话，只会显示 <code>draft</code> 为 <code>false</code> 的文章。</p>
+
+<p>服务器是实时更新的，只要你的内容发生了变化，本地服务器会实时更新变化后的内容，也可以设置成不实时更新</p>
+
+<pre><code class="language-bash">$ hugo server --watch=false
+</code></pre>
+
+<p><code>hugo server</code> 并不会生成真正的站点，一般在部署之前，需要运行 <code>hugo</code> 命令生成 <code>public</code> 站点</p>
+
+<pre><code class="language-bash">$ hugo
+</code></pre>
+
+<h2 id="增加分类">增加分类</h2>
+
+<p>增加分类的方法非常简单，只需要修改配置文件</p>
+
+<pre><code class="language-toml">[Menu]
+   [[Menu.Main]]
+    Name = &quot;随笔&quot;
+    URL = &quot;/categories/随笔&quot;
+    Weight = 1
+   [[Menu.Main]]
+    Name = &quot;技术&quot;
+    URL = &quot;/categories/技术&quot;
+    Weight = 2
+   [[Menu.Main]]
+    Name = &quot;关于&quot;
+    URL = &quot;/about&quot;
+    Weight = 3
+</code></pre>
+
+<p>文章增加对应的分类即可</p>
+
+<pre><code class="language-bash">---
+title: &quot;Second&quot;
+date: 2019-06-03 
+draft: false
+categories: [&quot;随笔&quot;] 
+tags: []
+toc: false
+---
+</code></pre>
+
+<h2 id="部署到-github">部署到 <code>Github</code></h2>
+
+<p>只需要将 <code>public</code> 部署到 github 即可。</p>
+
+  </div>
+
+  
+  
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">心智极客</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2019-06-03
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+  
+  
+</article>
+
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "http://www.huangmingxian.com/tech/2019-06-03-use-hugo-to-make-static-blog/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'ihuangmx';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://www.huangmingxian.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        心智极客
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
