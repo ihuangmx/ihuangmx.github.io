@@ -6,9 +6,37 @@
     <description>Recent content in Tags on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Tue, 19 Nov 2019 13:02:56 +0800</lastBuildDate>
     
 	<atom:link href="http://www.huangmingxian.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>preview</title>
+      <link>http://www.huangmingxian.com/tags/preview/</link>
+      <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
+      
+      <guid>http://www.huangmingxian.com/tags/preview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcodes</title>
+      <link>http://www.huangmingxian.com/tags/shortcodes/</link>
+      <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
+      
+      <guid>http://www.huangmingxian.com/tags/shortcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-6</title>
+      <link>http://www.huangmingxian.com/tags/tag-6/</link>
+      <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
+      
+      <guid>http://www.huangmingxian.com/tags/tag-6/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
