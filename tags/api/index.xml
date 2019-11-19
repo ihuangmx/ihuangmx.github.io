@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 心智极客</title>
-    <link>http://www.huangmingxian.com/post/</link>
-    <description>Recent content in Posts on 心智极客</description>
+    <title>api on 心智极客</title>
+    <link>http://www.huangmingxian.com/tags/api/</link>
+    <description>Recent content in api on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 Nov 2019 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://www.huangmingxian.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.huangmingxian.com/tags/api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>http://www.huangmingxian.com/post/2019-11-20-json-web-token-tutorial/</guid>
       <description>原理 Web 应用可分为客户端和服务端，这两者之间经常需要进行身份认证。 由于 HTTP 是无状态协议，不能保存认证后的用户状态，因此，每一次发送请求都需要重复</description>
-    </item>
-    
-    <item>
-      <title>使用 Hugo 快速搭建个人博客</title>
-      <link>http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/</link>
-      <pubDate>Mon, 03 Jun 2019 13:02:56 +0800</pubDate>
-      
-      <guid>http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/</guid>
-      <description>Hugo 号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 1 2 3 $ brew install hugo $ hugo version // 是否安装成功</description>
     </item>
     
   </channel>
