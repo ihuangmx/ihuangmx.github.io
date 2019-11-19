@@ -5,29 +5,11 @@
     <link>http://www.huangmingxian.com/categories/</link>
     <description>Recent content in Categories on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 19 Nov 2019 13:02:56 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 03 Jun 2019 13:02:56 +0800</lastBuildDate>
     
 	<atom:link href="http://www.huangmingxian.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>index</title>
-      <link>http://www.huangmingxian.com/categories/index/</link>
-      <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
-      
-      <guid>http://www.huangmingxian.com/categories/index/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shortcodes</title>
-      <link>http://www.huangmingxian.com/categories/shortcodes/</link>
-      <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
-      
-      <guid>http://www.huangmingxian.com/categories/shortcodes/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>MacOS</title>
@@ -35,6 +17,15 @@
       <pubDate>Mon, 03 Jun 2019 13:02:56 +0800</pubDate>
       
       <guid>http://www.huangmingxian.com/categories/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术</title>
+      <link>http://www.huangmingxian.com/categories/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Mon, 03 Jun 2019 13:02:56 +0800</pubDate>
+      
+      <guid>http://www.huangmingxian.com/categories/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     

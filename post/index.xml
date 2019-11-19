@@ -5,19 +5,19 @@
     <link>http://www.huangmingxian.com/post/</link>
     <description>Recent content in Posts on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 19 Nov 2019 13:02:56 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 03 Jun 2019 13:02:56 +0800</lastBuildDate>
     
 	<atom:link href="http://www.huangmingxian.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>First</title>
-      <link>http://www.huangmingxian.com/post/first/</link>
-      <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
+      <title>使用 Hugo 快速搭建个人博客</title>
+      <link>http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/</link>
+      <pubDate>Mon, 03 Jun 2019 13:02:56 +0800</pubDate>
       
-      <guid>http://www.huangmingxian.com/post/first/</guid>
-      <description>希波格拉底呀 ，所谓智术之师 ，不就是用批发或者零售的方式经营精神粮食的人吗 ？我看他的性质就是这样 。精神粮食是什么呢 ，苏格拉底 ？我说 ，很清楚 ，知</description>
+      <guid>http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/</guid>
+      <description>Hugo 号称是世界上最快的静态网站生成工具，由 Go 语言开发，除了速度快之外，本身的使用也非常的简单。 安装 Mac 下的安装 1 2 3 $ brew install hugo $ hugo version // 是否安装成功</description>
     </item>
     
   </channel>

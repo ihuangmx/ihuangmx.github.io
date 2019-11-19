@@ -10,77 +10,7 @@
   
   <url>
     <loc>http://www.huangmingxian.com/categories/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/post/first/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/categories/index/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/post/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/tags/preview/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/categories/shortcodes/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/tags/shortcodes/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/tags/tag-6/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/tags/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/</loc>
-    <lastmod>2019-11-19T13:02:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangmingxian.com/about/</loc>
-    <lastmod>2019-11-19T10:58:18+08:00</lastmod>
+    <lastmod>2019-06-03T13:02:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -93,15 +23,35 @@
   </url>
   
   <url>
-    <loc>http://www.huangmingxian.com/tech/</loc>
+    <loc>http://www.huangmingxian.com/post/</loc>
     <lastmod>2019-06-03T13:02:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangmingxian.com/tech/2019-06-03-use-hugo-to-make-static-blog/</loc>
+    <loc>http://www.huangmingxian.com/post/2019-06-03-use-hugo-to-make-static-blog/</loc>
     <lastmod>2019-06-03T13:02:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangmingxian.com/</loc>
+    <lastmod>2019-06-03T13:02:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangmingxian.com/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-06-03T13:02:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangmingxian.com/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
