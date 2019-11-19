@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.huangmingxian.com/sitemap.xml
+Sitemap: http://ihaungmx.github.io/sitemap.xml
