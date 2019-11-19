@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 心智极客</title>
-    <link>http://ihaungmx.github.io/categories/</link>
+    <link>http://ihunagmx.github.io/categories/</link>
     <description>Recent content in Categories on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 19 Nov 2019 13:02:56 +0800</lastBuildDate>
     
-	<atom:link href="http://ihaungmx.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://ihunagmx.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>index</title>
-      <link>http://ihaungmx.github.io/categories/index/</link>
+      <link>http://ihunagmx.github.io/categories/index/</link>
       <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/categories/index/</guid>
+      <guid>http://ihunagmx.github.io/categories/index/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shortcodes</title>
-      <link>http://ihaungmx.github.io/categories/shortcodes/</link>
+      <link>http://ihunagmx.github.io/categories/shortcodes/</link>
       <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/categories/shortcodes/</guid>
+      <guid>http://ihunagmx.github.io/categories/shortcodes/</guid>
       <description></description>
     </item>
     

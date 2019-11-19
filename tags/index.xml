@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 心智极客</title>
-    <link>http://ihaungmx.github.io/tags/</link>
+    <link>http://ihunagmx.github.io/tags/</link>
     <description>Recent content in Tags on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 19 Nov 2019 13:02:56 +0800</lastBuildDate>
     
-	<atom:link href="http://ihaungmx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://ihunagmx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>preview</title>
-      <link>http://ihaungmx.github.io/tags/preview/</link>
+      <link>http://ihunagmx.github.io/tags/preview/</link>
       <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/tags/preview/</guid>
+      <guid>http://ihunagmx.github.io/tags/preview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shortcodes</title>
-      <link>http://ihaungmx.github.io/tags/shortcodes/</link>
+      <link>http://ihunagmx.github.io/tags/shortcodes/</link>
       <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/tags/shortcodes/</guid>
+      <guid>http://ihunagmx.github.io/tags/shortcodes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tag-6</title>
-      <link>http://ihaungmx.github.io/tags/tag-6/</link>
+      <link>http://ihunagmx.github.io/tags/tag-6/</link>
       <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/tags/tag-6/</guid>
+      <guid>http://ihunagmx.github.io/tags/tag-6/</guid>
       <description></description>
     </item>
     

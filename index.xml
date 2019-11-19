@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>心智极客</title>
-    <link>http://ihaungmx.github.io/</link>
+    <link>http://ihunagmx.github.io/</link>
     <description>Recent content on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 19 Nov 2019 13:02:56 +0800</lastBuildDate>
     
-        <atom:link href="http://ihaungmx.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://ihunagmx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://ihaungmx.github.io/about/</link>
+      <link>http://ihunagmx.github.io/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/about/</guid>
+      <guid>http://ihunagmx.github.io/about/</guid>
       
         <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
 
@@ -36,10 +36,10 @@
     
     <item>
       <title>Posts</title>
-      <link>http://ihaungmx.github.io/post/</link>
+      <link>http://ihunagmx.github.io/post/</link>
       <pubDate>Tue, 19 Nov 2019 13:02:56 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/post/</guid>
+      <guid>http://ihunagmx.github.io/post/</guid>
       
         <description></description>
       
@@ -47,10 +47,10 @@
     
     <item>
       <title>About</title>
-      <link>http://ihaungmx.github.io/about/</link>
+      <link>http://ihunagmx.github.io/about/</link>
       <pubDate>Tue, 19 Nov 2019 10:58:18 +0800</pubDate>
       
-      <guid>http://ihaungmx.github.io/about/</guid>
+      <guid>http://ihunagmx.github.io/about/</guid>
       
         <description></description>
       

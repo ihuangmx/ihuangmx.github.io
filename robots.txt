@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://ihaungmx.github.io/sitemap.xml
+Sitemap: http://ihunagmx.github.io/sitemap.xml
