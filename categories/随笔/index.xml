@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on 心智极客</title>
+    <link>http://www.huangmingxian.com/categories/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on 心智极客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 20 Nov 2019 09:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.huangmingxian.com/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>进度表原理</title>
+      <link>http://www.huangmingxian.com/post/2019-11-20-schedule/</link>
+      <pubDate>Wed, 20 Nov 2019 09:00:00 +0800</pubDate>
+      
+      <guid>http://www.huangmingxian.com/post/2019-11-20-schedule/</guid>
+      <description>本文是《项目管理之美》的第二章的读书笔记。 市面上有很多关于进度表的可视化软件，但是却很少有人介绍进度表背后的原理，本文对进度表的原理进行简单</description>
+    </item>
+    
+  </channel>
+</rss>

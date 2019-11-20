@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>进度表原理 - 心智极客</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="心智极客" />
+  <meta name="description" content="本文是《项目管理之美》的第二章的读书笔记。 市面上有很多关于进度表的可视化软件，但是却很少有人介绍进度表背后的原理，本文对进度表的原理进行简单" />
+
+  <meta name="keywords" content="laravel, 个人管理, php, web" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+<link rel="canonical" href="http://www.huangmingxian.com/post/2019-11-20-schedule/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="进度表原理" />
+<meta property="og:description" content="本文是《项目管理之美》的第二章的读书笔记。 市面上有很多关于进度表的可视化软件，但是却很少有人介绍进度表背后的原理，本文对进度表的原理进行简单" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.huangmingxian.com/post/2019-11-20-schedule/" />
+<meta property="article:published_time" content="2019-11-20T09:00:00+08:00" />
+<meta property="article:modified_time" content="2019-11-20T09:00:00+08:00" />
+<meta itemprop="name" content="进度表原理">
+<meta itemprop="description" content="本文是《项目管理之美》的第二章的读书笔记。 市面上有很多关于进度表的可视化软件，但是却很少有人介绍进度表背后的原理，本文对进度表的原理进行简单">
+
+
+<meta itemprop="datePublished" content="2019-11-20T09:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-20T09:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="3572">
+
+
+
+<meta itemprop="keywords" content="读书笔记," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="进度表原理"/>
+<meta name="twitter:description" content="本文是《项目管理之美》的第二章的读书笔记。 市面上有很多关于进度表的可视化软件，但是却很少有人介绍进度表背后的原理，本文对进度表的原理进行简单"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">心智极客的网志</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      心智极客的网志
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.huangmingxian.com/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">进度表原理</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-11-20" class="post-time">
+          2019-11-20
+        </time>
+        <div class="post-category">
+            <a href="http://www.huangmingxian.com/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>本文是《项目管理之美》的第二章的读书笔记。</p>
+</blockquote>
+
+<p>市面上有很多关于进度表的可视化软件，但是却很少有人介绍进度表背后的原理，本文对进度表的原理进行简单的介绍。</p>
+
+<p>进度表之所以被广泛应用，是因为它具有三个基本的功能。</p>
+
+<ol>
+<li>外部承诺 - 进度表是对客户的承诺，承诺客户什么时候完成什么任务；</li>
+<li>集体责任 - 进度表能够让成员将工作看作是整体的一部分。如果没有进度表，成员意识不到自身的任务对他人造成的影响；</li>
+<li>项目跟踪 - 进度表将项目进行量化，帮助团队更好的理解他们目前需要做哪些工作；</li>
+</ol>
+
+<p>进度表的基本单元可用三分法来进行表示</p>
+
+<ul>
+<li>设计 - 应该做好什么</li>
+<li>实现 - 实际去做或者验证</li>
+<li>测试 - 分析以及改良已完成的事</li>
+</ul>
+
+<p><img src="/imgs/schedule-three-point-method.png" alt="img" /></p>
+
+<p>三分法有助于我们合理评估时间，例如增加一个需求，就可能会增加这三个方面的时间。</p>
+
+<p>将大项目分而治之，划分为成不同阶段。</p>
+
+<p><img src="/imgs/schedule-multiple-three-point-method.png" alt="img" /></p>
+
+<p>在实际使用进度表时，不可避免的会遇到一些问题。</p>
+
+<p><strong>越早估算误差越大</strong>。在项目早期，信息非常有限，所制定的进度表虽然详细而精确，但却难以反映现实。因此，必须根据项目的进行而不断调整进度表。</p>
+
+<p><img src="/imgs/schedule-estimate-deviation.png" alt="img" /></p>
+
+<p>估算代表的一种几率，而进度表则是一堆估算的集合，也就是说，几率的累积(80% × 80% = 64% )会让进度表的准确度比想象中的还要低。</p>
+
+<p><img src="/imgs/schedule-chances-accmulation.png" alt="img" /></p>
+
+<p>一些提高估算准确性的方法：</p>
+
+<p><strong>估算是整个团队的工作</strong>，需要不同角色的参与。如果将估算工作看成杂务工作，或者团队领导者没有参与该过程，别指望会得到可靠的估算。</p>
+
+<p>当成员犹豫不决时，应当帮助成员直面恐惧。当程序员犹豫是否给出估算结果时，我就会问：「我该回答你什么问题，才能让你更有信心给出估算？」给他机会来面对可能感受到的恐惧或沮丧，这样就使我能够帮助他解决问题。</p>
+
+<p><strong>建立估算的基准信心间距</strong>。对准确度有 40% 的信心是猜测，有 70%的信心是良好估算，有 90% 的信心是详尽而完整的分析。团队领导者必须对估算的准确度、程序员工作所需的时间，以及估算失误的风险取得一致意见。不要迷恋于数字：只把数字当成具体的估算质量，90% 的估算准确度应该就是 10 次恰好对 9 次。如果你决定要求团队改善估算质量，一定要给他们更多的时间去做，以达到你的要求。</p>
+
+<p>程序员领导必须通过提出好问题、<strong>采取整个团队可以效仿的明智的方法</strong>，来设定质量估算的规则。采取任何必要手段来消除产生虚假意见或消极意见的动机（例如：「不要强迫我」、「我只是猜测」等）。找出他们做出良好估算的正当需求，同时为其准备必要的时间，以满足估算质量目标。</p>
+
+<p><strong>程序员应该受到信任</strong>。如果你的大脑外科医生告诉你手术需要 5 个小时，你会强迫他 3 个小时做完吗？我对此很怀疑。有时候，可以利用压力来使人诚实，但这只是作为平衡手段（需要这种手段的通常原因是程序员对他不喜欢的事情会高估，对他喜欢的事情则会低估）。偶尔，多做几次估算（通过两个不同的开发人员）是一种明智的检查方法。</p>
+
+<p>估算依赖于程序员对项目目标的理解。估算除了基于程序员对设计规格说明书（如果有的话）的理解外，同时也要基于对项目目标的理解。Gerald Weniberg 在其《The Psychology of Computer Programming》（Dorset House 出版，1971 年）一书中记载到，<strong>高层次目标的不明确会直接影响程序员做低层次假设</strong>。无论技术问题如何明确，程序员采取的解决方法都可能因为整体项目的高层次目的差异而有极大的变化。</p>
+
+<p>估算应该根据以前的生产率。对于程序员，<strong>记录下整个项目过程中所做的估算是个好习惯</strong>。他们应该和经理一起讨论这些事，经理应该有兴趣知道，他们的团队里谁对什么估算比较好。极限编程使用「速度」这个术语来表示程序员（或团队）基于以前生产率所估算的未来可能的生产率 。</p>
+
+<p><strong>规格说明书或设计质量应该达到做良好估算所需的程度</strong>。这需要项目管理员和程序员之间进行协商。估算质量要求越高，规格说明书的质量也应该越高。</p>
+
+<p>有些已知技巧有助于作出更好的估算。最有名的技巧是 PERT ，就是通过对工作所做的高、中、低估算值进行平均，来最小化风险。这种做法的有两个优点：首先，这会迫使每个人认识到估算是预测，可能的结果有个范围；其次，给项目经理一个机会来积极或保守地调节进度表（通过赋予低或高估算值更大的权重）。</p>
+
+<p>里程碑长度应该和项目变化相匹配。预期的变化越多，里程碑就应该越短。较短的里程碑使得团队更容易在项目中期进行进度调整。这使管理阶层检查项目的时间间隔更短，同时降低了项目变化的风险。对于跨越里程碑时的预期变化，团队应有准备，如此，他们将以预期变更来代替抵制变更。</p>
+
+<p>对远景要乐观，对进度表要存疑。安排进度的主要心理挑战就是利用适当的怀疑，同时又不能挫伤团队的热情和积极性。写远景文件时，需要对未来乐观且充满信心，但对于进度表则不同，要用相反的观点。在写下工作花费时间的估算数字时，需要对墨菲定律（Murphy law）保持真诚的敬重（该错的一定会错）。进度表不应该反映，在理想情况下会发生什么；相反地，好的进度表会宣称什么事将实际发生，尽管几项重要事情并不能如期进行。让测试/QA 团队参与进度安排很重要，因为他们会用自然的质疑和批评眼光来看待工程工作。</p>
+
+<p>重视设计。设计过程是应对无知和意外挑战的最佳保险。更好的设计实践，是让团队顺利驾驭实现及其他阶段的唯一方式。设计技巧不同于实现技巧，最强最快的编码人员不一定是最佳设计思考者或问题解决者。虽然设计过程对于思考和处理工程项目非常重要，但很多计算机科学课程并没有很好的教授这项知识。关于这个主题的进一步了解可用参考第 5、6 章的相关主题。</p>
+
+<p>规划检查点以进行新增/裁减讨论。进度表应该加上一些短期检查，以便于领导者审查当前进度，并反馈新信息或客户意见。这应该纳入主进度表，同时也应该明确地写在项目合同中。在这些检查中，现有工作项目可以被裁减，新的工作项目也可以加进来，这由领导者通过对当前情况进行分析后来决定。这类检查的自然时间点是各阶段之间，或者至少在各个设计或实现阶段的末期。但是，如果产生重要问题或计划和现实之间存在明显差异时，任何时刻都可进行检查。这种讨论的目标应该是把梳理项目、更新进度，重新整理工作项目的优先级，明确知道下一步的进度，了解并相信接下来会如何（请参见第 14、15 章）。</p>
+
+<p>告知团队计划的原理。无论采用什么控制进度的手段或技巧，都应该使其称为团队的共同知识。如果每位程序员和测试员都对进度如何控制，以及当前项目所使用的特定的项目管理策略有个基本的理解，他们就能提出更好的问题，而且更能理解和相信纳入计划的事情。</p>
+
+<p>通过问题空间来衡量团队经验。关于进度安排的神奇变量之一，就是团队对即将解决的这种问题有多少经验。如果团队要开发一个由数据库驱动的网站，并且，6 名程序员中有 5 名曾多次做过这种工作，那么，假设他们在设计和估算工作时，会比从没做过这类项目的团队做得更好就很合理。此外，也一定要考虑进度表估算的积极或保守程度。</p>
+
+<p>衡量团队合作的信心和经验。虽然估算来自于每个程序员，但在创建一个完整的事物时，程序员是以一个整体在一起工作。即使团队中都是超级明星程序员，如果以前从没合作过（或者一起面对困难挑战），还是难以达到预期的效率。如果采用新组成的团队来完成大型高风险的项目，或者需要承诺完成非常紧张的进度，那就非常危险了。</p>
+
+<p>尽早考虑风险。如果你知道 Sally 负责实现最复杂的组件，那么在进度初期就要处理这些挑战。风险越大，你就会需要越多的时间来处理它。如果到了进度表后期才开始处理风险，就没多少自由度来应对它了。对于政治、组织或资源相关的风险也是这样。</p>
+
+<p>检查清单</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> 进度表中是否以某种形式，把所有参与人员的生病和度假时间包含进来？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 是否考虑假日或一年中其他主要分心的时段（例如，美国从感恩节到圣诞节的时期，欧洲的夏季）？在这段时期内，很难达成主要任务的截止期限。</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 每个成员是否看得到进度表？是否需定期汇报进度（以不打扰人的方式）？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 是否有人每日或每周查看整个进度表？这个人是否有足够的权利来提出好问题并作出调整？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 团队是否对进度表有拥有感和承诺感？如果没有，为什么？团队成员是否参与了进度表以及要完成的工作项目的制定？还是把制订好的进度表传递给他们？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 团队领导者添加的功能需求是否比协助消除的更多？团队领导者是否曾对新工作说「不」，而且对团队提供合理的思路，以响应新的（或迟来的）需求？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 团队人员是否受到过鼓励和支持，对无法达成目标及远景的新工作要求说「不」？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 作估算时使用的是什么几率？90%？70%？50%？这些几率是否在主要高层进度表中得以表述？客户/VP/顾客是否了解这些？是否讨论过另一个花时间更多、但几率更高的方案？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 领导者和管理者是否定期对进度表进行调整和重新审查？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 进度表是否考虑到假期时段的工作时间更少？（在美国，感恩节到圣诞节通常是的低生产率时期。）进度表是否考虑到可能发生的破坏性天气（例如，芝加哥的暴风雪，堪萨斯州的龙卷风，西雅图的日晒）？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 规格说明书或设计计划的质量是否符合工程师做出良好工作估算的要求？</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 在做出良好工作估算上，工程师是否受过训练或具有丰富的经验？</label></li>
+</ul>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">心智极客</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2019-11-20
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://www.huangmingxian.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2019-11-20-json-web-token-tutorial/">
+            <span class="next-text nav-default">深入浅出 Json Web Token</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "ihuangmx/ihuangmx.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://www.huangmingxian.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        心智极客
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
