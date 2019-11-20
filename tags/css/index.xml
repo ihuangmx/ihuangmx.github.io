@@ -17,7 +17,7 @@
       <pubDate>Wed, 20 Nov 2019 14:50:00 +0800</pubDate>
       
       <guid>http://www.huangmingxian.com/post/2019-11-20-css-basic-usage/</guid>
-      <description>CSS 使用原理 为文档应用样式 为文档应用样式主要有三种方式，优先级顺序为内联 &amp;gt; 嵌入 &amp;gt; 链接。 内联 - 通过标签的 style 属性为标签添加样式 1 2 &amp;lt;!-- 内联样式 --&amp;gt; &amp;lt; p</description>
+      <description>为文档应用样式 为文档应用样式主要有三种方式，优先级顺序为内联 &amp;gt; 嵌入 &amp;gt; 链接。 内联 - 通过标签的 style 属性为标签添加样式 1 2 &amp;lt;!-- 内联样式 --&amp;gt; &amp;lt; p style=&amp;#34;font-size:25p&amp;#34;&amp;gt; 嵌入 - 放</description>
     </item>
     
   </channel>
