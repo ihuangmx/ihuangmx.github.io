@@ -347,19 +347,19 @@
 
 <p>Web 应用可分为客户端和服务端，这两者之间经常需要进行身份认证。</p>
 
-<p><img src="/imgs/jwt-web-and-server-auth.jpeg" alt="img" /></p>
+<p><img src="../imgs/jwt-web-and-server-auth.jpeg" alt="img" /></p>
 
 <p>由于 HTTP 是无状态协议，不能保存认证后的用户状态，因此，每一次发送请求都需要重复的进行认证。</p>
 
-<p><img src="/imgs/http-stateless-protocol.png" alt="img" /></p>
+<p><img src="../imgs/http-stateless-protocol.png" alt="img" /></p>
 
 <p>为了解决该问题，通常会使用 Cookie 来管理 Session，来实现用户状态管理。</p>
 
-<p><img src="/imgs/http-session-cookie-auth.png" alt="img" /></p>
+<p><img src="../imgs/http-session-cookie-auth.png" alt="img" /></p>
 
 <p>服务器需要记录 Session 信息，当存在多台服务器时，这些服务器就需要共享 Session。例如，将 Session 数据进行持久化存储，每台服务器都从持久层中获取 Session。这种方案也有风险，当持久层突然失效时，所有登录信息都将失效。</p>
 
-<p><img src="/imgs/session-persistence.png" alt="4gKshCJIgU" /></p>
+<p><img src="../imgs/session-persistence.png" alt="4gKshCJIgU" /></p>
 
 <p>由此可见，服务端保存认证状态是一件棘手的事，既然如此，何不将数据全都保存在客户端呢？Json Web Token 就是基于该思路提出的一种认证方案。</p>
 
@@ -371,7 +371,7 @@
 <li>Token - Token 是令牌的意思，代表了 JWT 是一种认证的凭证</li>
 </ul>
 
-<p><img src="/imgs/json-web-token.png" alt="Image result for Json Web Token" /></p>
+<p><img src="../imgs/json-web-token.png" alt="Image result for Json Web Token" /></p>
 
 <p>JWT 的认证过程如下：</p>
 
@@ -382,11 +382,11 @@
 <li>服务端对 JWT 进行验证</li>
 </ol>
 
-<p><img src="/imgs/jwt-diagram.png" alt="JWT Diagram" /></p>
+<p><img src="../imgs/jwt-diagram.png" alt="JWT Diagram" /></p>
 
 <p>生成的 JWT 的格式如下</p>
 
-<p><img src="/imgs/jwt-string.png" alt="image-20191113172725564" /></p>
+<p><img src="../imgs/jwt-string.png" alt="image-20191113172725564" /></p>
 
 <p>JWT 可分为三部分，用 <code>.</code> 符号隔开</p>
 
