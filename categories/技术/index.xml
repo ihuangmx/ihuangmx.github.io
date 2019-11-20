@@ -6,10 +6,19 @@
     <description>Recent content in 技术 on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 20 Nov 2019 14:50:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:14 +0800</lastBuildDate>
     
 	<atom:link href="http://www.huangmingxian.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue 入门第一课：任务列表</title>
+      <link>http://www.huangmingxian.com/post/2019-11-21-vue-todo-list/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:14 +0800</pubDate>
+      
+      <guid>http://www.huangmingxian.com/post/2019-11-21-vue-todo-list/</guid>
+      <description>准备工作 新建一个 HTMl 页面，在头部直接引入 CDN 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Vue&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;!-- HTML 的内容写在这 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; &amp;lt;!-- JavaScript 的内容写</description>
+    </item>
     
     <item>
       <title>CSS 基本原理</title>
