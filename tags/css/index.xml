@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>读书笔记 on 心智极客</title>
-    <link>http://www.huangmingxian.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
-    <description>Recent content in 读书笔记 on 心智极客</description>
+    <title>css on 心智极客</title>
+    <link>http://www.huangmingxian.com/tags/css/</link>
+    <description>Recent content in css on 心智极客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 Nov 2019 14:50:00 +0800</lastBuildDate>
     
-	<atom:link href="http://www.huangmingxian.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.huangmingxian.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>http://www.huangmingxian.com/post/2019-11-20-css-basic-usage/</guid>
       <description>CSS 使用原理 为文档应用样式 为文档应用样式主要有三种方式，优先级顺序为内联 &amp;gt; 嵌入 &amp;gt; 链接。 内联 - 通过标签的 style 属性为标签添加样式 1 2 &amp;lt;!-- 内联样式 --&amp;gt; &amp;lt; p</description>
-    </item>
-    
-    <item>
-      <title>进度表原理</title>
-      <link>http://www.huangmingxian.com/post/2019-11-20-schedule/</link>
-      <pubDate>Wed, 20 Nov 2019 09:00:00 +0800</pubDate>
-      
-      <guid>http://www.huangmingxian.com/post/2019-11-20-schedule/</guid>
-      <description>本文是《项目管理之美》的第二章的读书笔记。 市面上有很多关于进度表的可视化软件，但是却很少有人介绍进度表背后的原理，本文对进度表的原理进行简单</description>
     </item>
     
   </channel>
